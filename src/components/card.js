@@ -283,11 +283,9 @@ useTexture.preload(
   "/assets_incase/band.jpg"
 );
 export default function App() {
-  const { debug } = useControls({ debug: false });
   return (
 <Canvas frameloop="demand" camera={{ position: [0, 0, 13], fov: 25 }} dpr={[1,1]} gl={{antialias: true}}>      <ambientLight intensity={Math.PI} />
       <Physics
-        debug={debug}
         interpolate
         gravity={[0, -40, 0]}
         timeStep={1 / 60}
