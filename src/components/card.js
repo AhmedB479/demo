@@ -19,7 +19,6 @@ import {
 import { MeshLineGeometry, MeshLineMaterial } from "meshline";
 import { useControls } from "leva";
 import BadgeTexture from "./badgetexture";
-
 import { PerspectiveCamera, Center, Text3D, Resize } from "@react-three/drei";
 import { useLoader } from "@react-three/fiber";
 
@@ -42,14 +41,14 @@ useTexture.preload(
 export default function App() {
   const { debug } = useControls({ debug: false });
   return (
-    <Canvas camera={{ position: [0, 0, 13], fov: 25 }}>
+    <Canvas frameloop="demand" camera={{ position: [0, 0, 13], fov: 25 }} dpr={[0.5,1]}>
       <ambientLight intensity={Math.PI} />
       <Physics
         debug={false}
         interpolate
         gravity={[0, -30, 0]}
-        timeStep={1 / 60}
-        numSolverIterations={3}
+        timeStep={1 / 30}
+        numSolverIterations={1}
       >
         <Band />
       </Physics>
