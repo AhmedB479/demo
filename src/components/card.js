@@ -47,8 +47,9 @@ export default function App() {
       <Physics
         debug={false}
         interpolate
-        gravity={[0, -40, 0]}
-        timeStep={1 / 30}
+        gravity={[0, -30, 0]}
+        timeStep={1 / 60}
+        numSolverIterations={3}
       >
         <Band />
       </Physics>
@@ -98,7 +99,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
     linearDamping: 2,
   };
   const { nodes, materials } = useGLTF(
-    "https://assets.vercel.com/image/upload/contentful/image/e5382hct74si/5huRVDzcoDwnbgrKUo1Lzs/53b6dd7d6b4ffcdbd338fa60265949e1/tag.glb"
+    "/assets_incase/tag.glb"
   );
   const texture = useTexture(
     "/assets_incase/band.jpg"
