@@ -48,7 +48,7 @@ export default function App() {
         debug={false}
         interpolate
         gravity={[0, -40, 0]}
-        timeStep={1 / 60}
+        timeStep={1 / 30}
       >
         <Band />
       </Physics>
