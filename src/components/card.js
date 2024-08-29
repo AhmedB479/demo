@@ -41,14 +41,14 @@ useTexture.preload(
 export default function App() {
   const { debug } = useControls({ debug: false });
   return (
-    <Canvas frameloop="demand" camera={{ position: [0, 0, 13], fov: 25 }} dpr={[0.5,1]}>
+    <Canvas frameloop="demand" camera={{ position: [0, 0, 13], fov: 25 }} dpr={[1,1]}>
       <ambientLight intensity={Math.PI} />
       <Physics
         debug={false}
         interpolate
         gravity={[0, -30, 0]}
-        timeStep={1 / 30}
-        numSolverIterations={1}
+        timeStep={1 / 60}
+        numSolverIterations={4}
       >
         <Band />
       </Physics>
