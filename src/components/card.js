@@ -48,7 +48,7 @@ export default function App() {
         interpolate
         gravity={[0, -40, 0]}
         timeStep={1 / 60}
-        numSolverIterations={4}
+        // numSolverIterations={4}
       >
         <Band />
       </Physics>
