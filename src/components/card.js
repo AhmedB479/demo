@@ -131,17 +131,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
   }, [hovered, dragged]);
 
   useFrame((state, delta) => {
-    if (!dragged) {
-      // Gradually reduce the velocity to stabilize the ribbon
-      [j1, j2, j3].forEach((ref) => {
-        const velocity = ref.current?.linearVelocity();
-        ref.current?.setLinearVelocity({
-          x: velocity.x * 0.95,
-          y: velocity.y * 0.95,
-          z: velocity.z * 0.95,
-        });
-      });
-    }
+    
     if (dragged) {
       vec.set(state.pointer.x, state.pointer.y, 0.5).unproject(state.camera);
       dir.copy(vec).sub(state.camera.position).normalize();
