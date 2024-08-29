@@ -94,8 +94,8 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
     type: "dynamic",
     canSleep: true,
     colliders: false,
-    angularDamping: 2,
-    linearDamping: 2,
+    angularDamping: 5,
+    linearDamping: 5,
   };
   const { nodes, materials } = useGLTF(
     "/assets_incase/tag.glb"
