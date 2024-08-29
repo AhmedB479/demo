@@ -46,7 +46,7 @@ export default function App() {
       <Physics
         debug={false}
         interpolate
-        gravity={[0, -30, 0]}
+        gravity={[0, -100, 0]}
         timeStep={1 / 60}
         numSolverIterations={4}
       >
