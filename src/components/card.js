@@ -46,7 +46,7 @@ export default function App() {
       <Physics
         debug={false}
         interpolate
-        gravity={[0, -40, 0]}
+        gravity={[0, -100, 0]}
         timeStep={1 / 60}
         numSolverIterations={4}
       >
@@ -94,8 +94,8 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
     type: "dynamic",
     canSleep: true,
     colliders: false,
-    angularDamping: 5,
-    linearDamping: 5,
+    angularDamping: 2,
+    linearDamping: 8,
   };
   const { nodes, materials } = useGLTF(
     "/assets_incase/tag.glb"
