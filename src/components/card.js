@@ -104,7 +104,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
     "/assets_incase/band.jpg"
   );
   texture.minFilter = THREE.LinearFilter; // Improve texture filtering
-  
+  texture.anisotropy = 16;
   const { width, height } = useThree((state) => state.size);
   const [curve] = useState(
     () =>
