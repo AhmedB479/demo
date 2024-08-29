@@ -6,7 +6,7 @@ import Card from './components/card';
 function App() {
   return (
     // <FetchDataComponent />
-    createRoot(document.getElementById('root')).render(<div style={{height:"100vh"}}><Card /></div>)
+    createRoot(document.getElementById('root')).render(<div style={{height:"30vh",width:"30vw"}}><Card /></div>)
   );
 }
 

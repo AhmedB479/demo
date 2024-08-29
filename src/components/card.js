@@ -38,13 +38,14 @@ useTexture.preload(
 // https://github.com/pmndrs/drei/issues/1596
 // metro.config.js is important here or else you will get errors solution to it is in link below
 // https://gist.github.com/Grano22/f63698d5245beebeee7d5b57e0afd7df
+
 export default function App() {
   const { debug } = useControls({ debug: false });
   return (
     <Canvas camera={{ position: [0, 0, 13], fov: 25 }}>
       <ambientLight intensity={Math.PI} />
       <Physics
-        debug={debug}
+        debug={false}
         interpolate
         gravity={[0, -40, 0]}
         timeStep={1 / 60}
@@ -52,7 +53,7 @@ export default function App() {
         <Band />
       </Physics>
       <Environment background blur={0.75}>
-        <color attach="background" args={["black"]} />
+        <color attach="background" args={["white"]} />
         <Lightformer
           intensity={2}
           color="white"
@@ -99,10 +100,11 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
   const { nodes, materials } = useGLTF(
     "https://assets.vercel.com/image/upload/contentful/image/e5382hct74si/5huRVDzcoDwnbgrKUo1Lzs/53b6dd7d6b4ffcdbd338fa60265949e1/tag.glb"
   );
-  console.log(nodes);
   const texture = useTexture(
     "/assets_incase/band.jpg"
   );
+  texture.minFilter = THREE.LinearFilter; // Improve texture filtering
+  
   const { width, height } = useThree((state) => state.size);
   const [curve] = useState(
     () =>

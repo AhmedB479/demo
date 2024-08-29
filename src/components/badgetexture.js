@@ -8,8 +8,7 @@ function BadgeTexture({user}) {
     const textureAspect = 1.5;  // Example value
     const resizeId = "uniqueId123";  // Example unique ID
     // Load the texture using useLoader
-    const texture = useLoader(THREE.TextureLoader, '/assets_incase/band.jpg');
-    console.log(texture)
+    const texture = useLoader(THREE.TextureLoader, '/assets_incase/R.jpeg');
     
   return (
     <>
