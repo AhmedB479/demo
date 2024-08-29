@@ -41,12 +41,12 @@ useTexture.preload(
 export default function App() {
   const { debug } = useControls({ debug: false });
   return (
-    <Canvas frameloop="demand" camera={{ position: [0, 0, 13], fov: 25 }} dpr={[1,1]}>
+    <Canvas frameloop="demand" camera={{ position: [0, 0, 13], fov: 25 }} dpr={[1,1]} gl={{antialias: true}}>
       <ambientLight intensity={Math.PI} />
       <Physics
         debug={false}
         interpolate
-        gravity={[0, -100, 0]}
+        gravity={[0, -40, 0]}
         timeStep={1 / 60}
         numSolverIterations={4}
       >
@@ -176,7 +176,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
 
   return (
     <>
-      <group position={[0, 4, 0]}>
+            <group position={[0, 4, 0]}>
         <RigidBody ref={fixed} {...segmentProps} type="fixed" />
         <RigidBody position={[0.5, 0, 0]} ref={j1} {...segmentProps}>
           <BallCollider args={[0.1]} />
