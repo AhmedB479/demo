@@ -293,7 +293,7 @@ export default function App() {
         <Band />
       </Physics>
       <Environment background blur={0.75}>
-        <color attach="background" args={["black"]} />
+        <color attach="background" args={["transparent"]} />
         <Lightformer
           intensity={2}
           color="white"
@@ -460,7 +460,7 @@ function Band({ maxSpeed = 30, minSpeed = 10 }) {
                 roughness={0.3}
               >
                 <RenderTexture attach="map" height={2000} width={2000}>
-                  <BadgeTexture user={{firstName:"John",lastName:"Doe"}} />
+                  <BadgeTexture user={{firstName:"Ahmed",lastName:"Doe"}} />
 
                 </RenderTexture>
               </meshPhysicalMaterial>

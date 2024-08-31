@@ -11,14 +11,17 @@ function BadgeTexture({ user }) {
   
   // Load the texture using useLoader
   const texture = useLoader(THREE.TextureLoader, '/assets_incase/R.jpeg');
-  
+  const args = {
+    color:"black"
+  };
   return (
     <>
       <PerspectiveCamera makeDefault manual aspect={1.05} position={[0.49, 0.22, 2]} />
       
       <mesh>
         <planeGeometry args={[planeWidth, -planeWidth / textureAspect]} />
-        <meshBasicMaterial transparent map={texture} side={THREE.BackSide} />
+        {/* <meshBasicMaterial transparent map={texture} side={THREE.BackSide} /> */}
+        <meshBasicMaterial color={"black"} side={THREE.BackSide} />
       </mesh>
       
       <Center>
@@ -26,17 +29,23 @@ function BadgeTexture({ user }) {
           <Text3D
             bevelEnabled={false}
             bevelSize={0}
-            font="/assets_incase/gt.json"
+            size={"10"}
+            font="/assets_incase/Poppins Black_Regular.json"
             height={0.1} // Make sure to add height if needed
             scale={[0.9, 1, 0.9]}
             position={[0, -1, 0]} // Adjust position to be in front of the plane
-            rotation={[0, Math.PI, Math.PI]}>
+            rotation={[0, Math.PI, Math.PI]}
+            {...args}
+            >
+            <meshBasicMaterial color={"violet"} />
             {user.firstName}
           </Text3D>
+
           <Text3D
             bevelEnabled={false}
             bevelSize={0}
-            font="/assets_incase/gt.json"
+            size={"10"}
+            font="/assets_incase/Poppins Black_Regular.json"
             height={0.1} // Make sure to add height if needed
             scale={[0.9, 1, 0.9]}
             position={[0, 1, 0]} // Adjust position to be in front of the plane
