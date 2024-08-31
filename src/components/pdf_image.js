@@ -114,3 +114,4 @@ const PDFToImage = () => {
 };
 
 export default PDFToImage;
+// "pdfjs-dist": "^3.11.174",
